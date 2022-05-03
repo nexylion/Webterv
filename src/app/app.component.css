@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.demo-wrap {
+position: relative;
+padding-bottom: 5px;
+overflow: hidden;
+  border-bottom: 5px solid white;
+}
+
+.demo-bg {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:1500px;
+  height:840px;
+  object-fit: cover;
+
+}
+
+.grid-wrap {
+  display: grid;
+  grid: 200px /  auto auto auto;
+}
+
+.demo-content {
+  overflow: hidden;
+  max-width: 50ch;
+  grid-column: 5;
+  grid-row: 4;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.61);
+  background-size: auto;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+.demo-content2 {
+  overflow: hidden;
+  max-width: 50ch;
+  grid-column: 1;
+  grid-row: 2;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.61);
+  background-size: auto;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+div {
+  font-size: 20px;
+}
