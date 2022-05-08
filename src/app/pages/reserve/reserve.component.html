@@ -1,0 +1,11 @@
+<div class="main-component">
+    <mat-card class="demo-inline-calendar-card">
+
+        <mat-calendar (selectionChange)="reload()" [(selected)]="selected"></mat-calendar>
+    </mat-card>
+    <p *ngIf="selected">Selected date: {{ selected.toISOString().substring(0,10)}}</p>
+
+</div>
+<div *ngFor="let item of freeSpace">
+    <button mat-raised-button color="secondary" value="{{item}}" *ngIf="!reservedSpace.includes(item)">{{item}}</button>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "massage-e39ab": {
+      "hosting": {
+        "Massage": [
+          "massage-e39ab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "massage-e39ab"
+  }
+}

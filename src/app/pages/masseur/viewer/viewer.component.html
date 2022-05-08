@@ -1,0 +1,10 @@
+<mat-card class="example-card" *ngIf="masseur">
+    <mat-card-header>
+        <mat-card-title>{{masseur.Name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{masseur.ImgUrl}}" alt="{{masseur.Name}}">
+    <mat-card-content>{{masseur.Desc}}</mat-card-content>
+    <mat-card-actions>
+        <button (click)="toReserve()" color="primary">Foglalás</button>
+    </mat-card-actions>
+</mat-card>

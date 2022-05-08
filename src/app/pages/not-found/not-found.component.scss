@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+// Copy the palettes from your selected theme (usually theme.scss).
+$app-primary: mat-palette($mat-deep-purple);
+$app-accent: mat-palette($mat-light-blue);
+$app-warn: mat-palette($mat-pink);
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main-component {
+    height: 100vh;
+    align-items: center;
+}
+
+h1 {
+    font: 8vh sans-serif;
+    text-shadow: -0.5vh -0.5vh 0 $primary;
+}

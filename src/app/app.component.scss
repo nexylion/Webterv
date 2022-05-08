@@ -1,0 +1,94 @@
+@import '~@angular/material/theming';
+// Copy the palettes from your selected theme (usually theme.scss).
+$app-primary: mat-palette($mat-deep-purple);
+$app-accent: mat-palette($mat-light-blue);
+$app-warn: mat-palette($mat-pink);
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.demo-wrap {
+    position: relative;
+    padding-bottom: 5px;
+    overflow: hidden;
+    border-bottom: 5px solid white;
+}
+
+.flex-img-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.demo-bg {
+    position: absolute;
+    padding: 20px;
+    flex: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: contain;
+}
+
+.grid-wrap {
+    display: grid;
+    grid: 20vw / auto auto auto;
+}
+
+.demo-content2 {
+    overflow: hidden;
+    max-width: 45vw;
+    grid-column: 5;
+    grid-row: 4;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.61);
+    background-size: auto;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+.demo-content {
+    overflow: hidden;
+    max-width: 45vw;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.61);
+    background-size: 100%;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+image {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-sidenav {
+    width: 250px;
+}
+
+.selected {
+    color: $primary;
+}
+
+.main-icon {
+    text-shadow: -1px -1px 0 $primary, 1px -1px 0 $primary, -1px 1px 0 $primary, 1px 1px 0 $primary;
+}

@@ -1,66 +1,32 @@
-<div class="demo-wrap">
-  <img
-    class="demo-bg"
-    src="../assets/asia-landscape.avif"
-    alt=""
-  >
-  <div class="grid-wrap">
-  <div class="demo-content">
-    <h1>Masszász Jótékony hatásai!</h1>
-    <h3>A masszázs kihat az egész személyiségünkre. Szó szerint nyugtatja az idegeket, kellemes érzést nyújt, s megteremti a test és lélek egyensúlyát.</h3>
-    <ul>
-      <li>Mérséklődik vagy megszűnik a fájdalom. Ez a hatás a gyógymasszázsnál még inkább megjelenik a kimozgató fogások által.</li>
-      <li>Fokozza a hajlékonyságunkat. Nő az izomzat teljesítőképessége, megszűnik az izomfáradtság. Ez utóbbi természetes, hiszen a sportmasszázs fogásai is a svéd- és gyógymasszázs fogásaira épülnek.</li>
-      <li>Lazítja a stressztől görcsössé vált izmokat, segít a relaxációban.</li>
-    </ul>
-  </div>
-  </div>
-</div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" [loggedInUser]="loggedInUser" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)"></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="black">
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+            <mat-icon>menu</mat-icon>
+          </button>
+            </div>
+            <div>
+                <a fxFlex [ngClass]="{'selected' : page === 'main','main-icon' : page != 'main'}" routerLink="/main">MasszÁsz</a></div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end " fxHide.xs>
+                <ul *ngIf="!loggedInUser" fxLayout fxLayoutGap="10px " class="navigation-items ">
 
-<div class="demo-wrap">
-  <img
-    class="demo-bg"
-    src="../assets/zen-stone.jpg"
-    alt=""
-  >
-  <div class="grid-wrap">
-    <div class="demo-content2">
-      <h1>1. Ellazít</h1>
- <div>Mikor a test feszült és stressznek van kitéve, akkor természetes reakcióként stresszhormont (ún. kortizol) termel. A minket ért stressz mennyiségének függvényében ez igen egészségtelen mértéket is elérhet. Ennek eredményeképp hajlamosabbá válsz a hízásra, fáradékony vagy, emésztési gondok és fejfájás jelez arra, hogy a kortizol szinted magas.</div>
-      <br>
-<div>A massázs segít ellazulni, hogy a test megújuló üzemmódba kapcsolojon, és a megfelelő hormonháztartás egyensúlyba billenhessen. Ez az ellazult állapot nem csupán a tested számára lesz jótékony hatású, hanem javítja a kedélyállapotod és kellemesebb alvást biztosít.</div>
 
-  </div>
-</div>
-</div>
+                    <li><a [ngClass]="{ 'selected' : page==='register' }" routerLink="/register">Regisztrálás</a></li>
+                    <li><a [ngClass]="{ 'selected' : page==='login' }" routerLink="/login">Bejelentkezés</a></li>
 
-  <div class="demo-wrap">
-    <img
-      class="demo-bg"
-      src="../assets/charles-black-F7HGqkkMYAU-unsplash.jpg"
-      alt=""
-    >
-    <div class="grid-wrap">
-      <div class="demo-content2">
-        <h1>2. Csökkenti a stresszt</h1>
-<div>Ez egy olyan faktor, amit sajnos a hétköznapi rohanó életben nem tudsz kikerülni. Ez nem csupán a masszázzsal csökkenthető, de az egyik legjobb módja annak, ha természetes úton szeretnél megszabadulni tőle. Rendszeres masszázsra járók megnövekedett energiaszintről, csökkenő fájdalmakról és fizikai és lelki állapotjavulásról számolnak be. Ha Te is szeretnél egy egészséges szokást kialakítani 2022-ban, akkor mindenképp írd fel a listára a masszázsterápiát is.</div>
-      </div>
-    </div>
-  </div>
+                </ul>
+                <ul *ngIf="loggedInUser" fxLayout fxLayoutGap="10px " class="navigation-items ">
 
-    <div class="demo-wrap">
-      <img
-        class="demo-bg"
-        src="../assets/engin-akyurt-ZbzYDboN7fg-unsplash.jpg"
-        alt=""
-      >
-      <div class="grid-wrap">
-        <div class="demo-content2">
-          <h1>3. Segíti az izmok egészségét</h1>
-          <div>A masszázs célja a testben felgyülemlő feszültség csökkentése, különböző nyomásgyakorlatok segítségével. A korábbiak mellett ez rendkívül jó hatást gyakorol az izmok egészségére is, a flexiblitásra, kedvező hatást gyakorol a véráramlásra.</div>
-          <br>
-          <div>Remekül alkalmazható rándulások, ficaom kezelésére is, hiszen a beteg területen a masszőr megfelelő technikákkal csökkenteni tudja a fájdalmat és serkenteni a gyógyító folymatok beindulását.</div>
-          <br>
-          <div>Például lumbágó, vagy izombecsípődés esetén rengeteg fájdalomtól tudjuk magunkat megkímélni egy profi masszőrrel. Ez a fajta massázs segít a fájdalomcsillapító hormonok felszabadításában, ami elősegíti a gyógyulást.</div>
-        </div>
-      </div>
+                    <li><a routerLink="/masseur" [ngClass]="{ 'selected' : page==='masseur' }">Masszőrök</a></li>
+                    <li><a [ngClass]="{ 'selected' : page==='login' }" routerLink="/login" (click)='logout()'>Kijelentkezés</a></li>
+
+                </ul>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
